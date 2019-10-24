@@ -32,6 +32,9 @@
 ```
     var serviceProvider = yufusdk.init({
         type: 'sp',
+        myPublicKey: {                                   // 身份提供者的公钥文件
+          path: '{PATH/TO/KEY}',
+        },
         expiresIn: 300,                                   // 令牌有效期限（单位：秒, 默认为5分钟）
     });
 ```
@@ -102,14 +105,18 @@
   });
 ```
   > 跳转链接会转到玉符服务器上认证，例如：
-  https://idp.yufuid.com/v1/sso/authorize?idp_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImlkcC14eHh4eHh4eC14eHh4LXh4eHgteHh4eC14eHh4eHh4eHh4eHgifQ.eyJzcGlkIjoic3AteHh4eCIsInN0YXRlIjoiXyIsInRudCI6InRudCIsImlhdCI6MTQ4MTE3NzY4NiwiZXhwIjoxNDgxMTc3OTg2LCJpc3MiOiJpZHAteHh4eHh4eHgteHh4eC14eHh4LXh4eHgteHh4eHh4eHh4eHh4Iiwic3ViIjoidmVnYSJ9.LAoI5hyAvJ3VApztdb6DJN5ciNva6YoaI4gfDmDbHzS_7-cfBtk5T3zBwLaGjdWf3_SR8qEb3m5XcdfWjA76ycYZEQUnEg3yDpYV73eNsTz46Ifte9mKdE8__YVHhmxuYbjYOfPYpWrua7AoaVwd7ejCcmpRabdkC8Ctphqa2JlX9XpSUWJwPmh0cHB6PFDYN6o1RgMoNE1rtObpRdm-WnDY-BQluFq-EO6uR2h0aja62CDRV2VVLyPqpc-LxGb6_3Rm4ooBPyaDM7yrRXDrbtiUKJ7cynb28t-yFmYRH8Pd0ZfzIxMjs1xwR4_3_wphEOL1U3zCZh8wpZeULe9Oc
+  https://portal.yufuid.com/api/v1/external/sso?idp_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImlkcC14eHh4eHh4eC14eHh4LXh4eHgteHh4eC14eHh4eHh4eHh4eHgifQ.eyJzcGlkIjoic3AteHh4eCIsInN0YXRlIjoiXyIsInRudCI6InRudCIsImlhdCI6MTQ4MTE3NzY4NiwiZXhwIjoxNDgxMTc3OTg2LCJpc3MiOiJpZHAteHh4eHh4eHgteHh4eC14eHh4LXh4eHgteHh4eHh4eHh4eHh4Iiwic3ViIjoidmVnYSJ9.LAoI5hyAvJ3VApztdb6DJN5ciNva6YoaI4gfDmDbHzS_7-cfBtk5T3zBwLaGjdWf3_SR8qEb3m5XcdfWjA76ycYZEQUnEg3yDpYV73eNsTz46Ifte9mKdE8__YVHhmxuYbjYOfPYpWrua7AoaVwd7ejCcmpRabdkC8Ctphqa2JlX9XpSUWJwPmh0cHB6PFDYN6o1RgMoNE1rtObpRdm-WnDY-BQluFq-EO6uR2h0aja62CDRV2VVLyPqpc-LxGb6_3Rm4ooBPyaDM7yrRXDrbtiUKJ7cynb28t-yFmYRH8Pd0ZfzIxMjs1xwR4_3_wphEOL1U3zCZh8wpZeULe9Oc
 
 ## Release Notes
 ** v1.0 **
- * 支持Nodejs常见的回调方式，减少潜在的阻塞问题。
+ * 支持Nodejs常见的回调方式，减少潜在的阻塞问题
  * 订阅式获取公钥，提高安全性
-  Prefer use of callback to prevent potential blocking issue
-  Support Yufu key rotation via public key service
+
+
+** v1.0.1 **
+ * 更新IDP生成Token链接地址
+ * 允许SP导入公钥文件
+
 
 ---
 ## FAQ
